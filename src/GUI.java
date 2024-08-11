@@ -3,6 +3,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
+// import java.util.ArrayList;
+// import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,6 +12,8 @@ import javax.swing.JPanel;
 public class GUI extends JPanel implements Runnable {
 
   JFrame frame;
+
+  // private List<Rectangle> rectangles;
 
   public GUI() {
     frame = new JFrame();
@@ -23,6 +27,10 @@ public class GUI extends JPanel implements Runnable {
     frame.setTitle("Our GUI");
     frame.setSize(600, 600);
     frame.setVisible(true);
+
+    // Instantiate and register the MouseHandler
+    MouseHandler mouseHandler = new MouseHandler(this);
+    this.addMouseListener(mouseHandler);
   }
 
   Thread gameThread;
@@ -41,12 +49,14 @@ public class GUI extends JPanel implements Runnable {
 
   public void update() {}
 
+  Rectangle rect;
+
   public void paintComponent(Graphics g) {
-    System.out.println("I drew something");
+    rect = new Rectangle(100, 100, 100, 100);
     super.paintComponent(g); // This is boiler plate for paintComponent method (subclass of JPanel)
     Graphics2D g2 = (Graphics2D) g;
     g2.setColor(Color.blue);
-    g2.fillRect(100, 100, 100, 100);
+    g2.fillRect(rect.getX(), rect.getY(), rect.getWidth(), rect.getHeight());
     g2.dispose();
   }
 }
