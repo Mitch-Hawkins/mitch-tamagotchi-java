@@ -1,5 +1,6 @@
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.List;
 
 public class MouseHandler implements MouseListener {
 
@@ -11,7 +12,17 @@ public class MouseHandler implements MouseListener {
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    System.out.println("Mouse clicked at: " + e.getPoint());
+    // System.out.println("Mouse clicked at: " + e.getPoint());
+    int mouseX = e.getX();
+    int mouseY = e.getY();
+
+    List<Rectangle> rectangles = gui.getRectangles();
+    for (Rectangle rectangle : rectangles) {
+      if (rectangle.contains(mouseX, mouseY)) {
+        rectangle.onClick();
+        break;
+      }
+    }
   }
 
   @Override

@@ -1,4 +1,4 @@
-public class Rectangle {
+public class Rectangle implements Clickable {
 
   private int x;
   private int y;
@@ -34,5 +34,9 @@ public class Rectangle {
     return (
       mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height
     );
+  }
+
+  public void onClick() {
+    System.out.println("Rectangle Clicked!");
   }
 }
