@@ -4,12 +4,14 @@ public class Rectangle implements Clickable {
   private int y;
   private int width;
   private int height;
+  private MenuScreen menuScreen;
 
-  public Rectangle(int x, int y, int width, int height) {
+  public Rectangle(int x, int y, int width, int height, MenuScreen menuScreen) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
+    this.menuScreen = menuScreen;
   }
 
   // Getter methods
@@ -29,6 +31,10 @@ public class Rectangle implements Clickable {
     return height;
   }
 
+  public MenuScreen getMenuScreen() {
+    return menuScreen;
+  }
+
   // Method to check if a point is inside the rectangle
   public boolean contains(int mouseX, int mouseY) {
     return (
@@ -38,5 +44,6 @@ public class Rectangle implements Clickable {
 
   public void onClick() {
     System.out.println("Rectangle Clicked!");
+    menuScreen.showMenu();
   }
 }
