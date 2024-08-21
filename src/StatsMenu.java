@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 
 public class StatsMenu extends MenuScreen {
 
-  public StatsMenu(JFrame frame, List<Rectangle> rectangles) {
-    super(frame, rectangles);
+  public StatsMenu(JFrame frame, List<MenuTile> menuTiles) {
+    super(frame, menuTiles);
     this.setBackground(Color.BLUE);
     initializeMenu();
   }

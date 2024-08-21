@@ -1,4 +1,4 @@
-public class Rectangle implements Clickable {
+public class MenuTile implements Clickable {
 
   private int x;
   private int y;
@@ -6,7 +6,7 @@ public class Rectangle implements Clickable {
   private int height;
   private MenuScreen menuScreen;
 
-  public Rectangle(int x, int y, int width, int height, MenuScreen menuScreen) {
+  public MenuTile(int x, int y, int width, int height, MenuScreen menuScreen) {
     this.x = x;
     this.y = y;
     this.width = width;
@@ -35,7 +35,7 @@ public class Rectangle implements Clickable {
     return menuScreen;
   }
 
-  // Method to check if a point is inside the rectangle
+  // Method to check if a point is inside the menuTile
   public boolean contains(int mouseX, int mouseY) {
     return (
       mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height
@@ -43,7 +43,7 @@ public class Rectangle implements Clickable {
   }
 
   public void onClick() {
-    System.out.println("Rectangle Clicked!");
+    System.out.println("Menu Tile Clicked!");
     menuScreen.showMenu();
   }
 }

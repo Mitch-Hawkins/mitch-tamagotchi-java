@@ -4,8 +4,8 @@ import javax.swing.JFrame;
 
 public class FoodMenu extends MenuScreen {
 
-  public FoodMenu(JFrame frame, List<Rectangle> rectangles) {
-    super(frame, rectangles);
+  public FoodMenu(JFrame frame, List<MenuTile> menuTiles) {
+    super(frame, menuTiles);
     initializeMenu();
   }
 

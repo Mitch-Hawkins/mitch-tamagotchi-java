@@ -34,12 +34,8 @@ public class GUI extends JPanel implements Runnable {
 
     menuSwitcher.addMenu("StatsMenu", statsMenu);
 
-    // List<Rectangle> defaultRectangles = new List
-    // currentMenu = new MainMenu(frame, new ArrayList<Rectangle>());
-    // List<Rectangle> rectangles = new ArrayList<Rectangle>();
-
-    // MainMenu mainMenu = new MainMenu(frame, rectangles, menuSwitcher);
-    // StatsMenu statsMenu = new StatsMenu(frame, rectangles, menuSwitcher);
+    // MainMenu mainMenu = new MainMenu(frame, menuTiles, menuSwitcher);
+    // StatsMenu statsMenu = new StatsMenu(frame, menuTiles, menuSwitcher);
 
     menuSwitcher.showMenu("StatsMenu");
     // Instantiate and register the MouseHandler

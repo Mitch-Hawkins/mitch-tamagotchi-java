@@ -46,4 +46,8 @@ public class MenuSwitcher {
   public void showMenu(String menuName) {
     cardLayout.show(mainPanel, menuName);
   }
+
+  public void showNextMenu() {
+    cardLayout.next(mainPanel);
+  }
 }

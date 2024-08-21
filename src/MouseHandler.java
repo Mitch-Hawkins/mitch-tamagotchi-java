@@ -14,16 +14,16 @@ public class MouseHandler implements MouseListener {
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    int mouseX = e.getX();
-    int mouseY = e.getY();
+    // int mouseX = e.getX();
+    // int mouseY = e.getY();
 
-    List<Rectangle> rectangles = menuScreen.getRectangles();
-    for (Rectangle rectangle : rectangles) {
-      if (rectangle.contains(mouseX, mouseY)) {
-        rectangle.onClick();
-        break;
-      }
-    }
+    // List<MenuTile> menuTiles = menuScreen.getMenuTiles();
+    // for (MenuTile menuTile : menuTiles) {
+    //   if (menuTile.contains(mouseX, mouseY)) {
+    //     menuTile.onClick();
+    //     break;
+    //   }
+    // }
   }
 
   @Override

@@ -6,38 +6,38 @@ import javax.swing.JFrame;
 
 public class MainMenu extends MenuScreen {
 
-  //   private List<Rectangle> rectangles;
+  //   private List<MenuTile> menuTiles;
   FoodMenu foodMenu;
   StatsMenu statsMenu;
 
   public MainMenu(
     JFrame frame,
-    List<Rectangle> rectangles,
+    List<MenuTile> menuTiles,
     MenuSwitcher menuSwitcher
   ) {
-    super(frame, rectangles);
-    // rectangles = new ArrayList<>();
+    super(frame, menuTiles);
+    // menuTiles = new ArrayList<>();
     initializeMenu();
   }
 
   @Override
   protected void initializeMenu() {
-    // foodMenu = new FoodMenu(frame, rectangles);
-    // statsMenu = new StatsMenu(frame, rectangles);
-    rectangles.add(new Rectangle(100, 100, 100, 100, foodMenu));
-    rectangles.add(new Rectangle(250, 100, 100, 100, statsMenu));
+    // foodMenu = new FoodMenu(frame, menuTile);
+    // statsMenu = new StatsMenu(frame, menuTile);
+    menuTiles.add(new MenuTile(100, 100, 100, 100, foodMenu));
+    menuTiles.add(new MenuTile(250, 100, 100, 100, statsMenu));
   }
 
   @Override
   protected void paintMenu(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     g2.setColor(Color.blue);
-    for (Rectangle rectangle : rectangles) {
+    for (MenuTile menuTile : menuTiles) {
       g2.fillRect(
-        rectangle.getX(),
-        rectangle.getY(),
-        rectangle.getWidth(),
-        rectangle.getHeight()
+        menuTile.getX(),
+        menuTile.getY(),
+        menuTile.getWidth(),
+        menuTile.getHeight()
       );
     }
   }

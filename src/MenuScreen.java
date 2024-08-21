@@ -10,11 +10,11 @@ import javax.swing.JPanel;
 public abstract class MenuScreen extends JPanel {
 
   protected JFrame frame;
-  protected List<Rectangle> rectangles;
+  protected List<MenuTile> menuTiles;
 
-  public MenuScreen(JFrame frame, List<Rectangle> rectangles) {
+  public MenuScreen(JFrame frame, List<MenuTile> menuTiles) {
     this.frame = frame;
-    this.rectangles = rectangles;
+    this.menuTiles = menuTiles;
     this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     this.setBackground(Color.BLACK);
   }
@@ -38,7 +38,7 @@ public abstract class MenuScreen extends JPanel {
     frame.repaint();
   }
 
-  public List<Rectangle> getRectangles() {
-    return rectangles;
+  public List<MenuTile> getMenuTiles() {
+    return menuTiles;
   }
 }
