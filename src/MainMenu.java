@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 
@@ -9,19 +8,24 @@ public class MainMenu extends MenuScreen {
 
   //   private List<Rectangle> rectangles;
   FoodMenu foodMenu;
+  StatsMenu statsMenu;
 
-  public MainMenu(JFrame frame, List<Rectangle> rectangles) {
+  public MainMenu(
+    JFrame frame,
+    List<Rectangle> rectangles,
+    MenuSwitcher menuSwitcher
+  ) {
     super(frame, rectangles);
-    rectangles = new ArrayList<>();
-    foodMenu = new FoodMenu(frame, rectangles);
+    // rectangles = new ArrayList<>();
     initializeMenu();
-    // MouseHandler mouseHandler = new MouseHandler(this);
-    // this.addMouseListener(mouseHandler);
   }
 
   @Override
   protected void initializeMenu() {
+    // foodMenu = new FoodMenu(frame, rectangles);
+    // statsMenu = new StatsMenu(frame, rectangles);
     rectangles.add(new Rectangle(100, 100, 100, 100, foodMenu));
+    rectangles.add(new Rectangle(250, 100, 100, 100, statsMenu));
   }
 
   @Override
